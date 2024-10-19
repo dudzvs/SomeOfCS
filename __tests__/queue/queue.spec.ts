@@ -23,4 +23,11 @@ describe('Queue', () => {
     test('should return undefined when dequeue is called on an empty queue', () => {
         expect(queue.dequeue()).toBe(undefined);
     });
+
+    test('should peek the first element without removing it', () => {
+        queue.enqueue(1);
+        queue.enqueue(2);
+        expect(queue.peek()).toBe(1);
+        expect(queue.getSize()).toBe(2);
+    });
 });

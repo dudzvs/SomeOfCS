@@ -39,6 +39,14 @@ export class Queue<T> {
         return head?.value;
     }
 
+    public peek(): T | undefined {
+        if (!this.head) {
+            return undefined;
+        }
+
+        return this.head?.value;
+    }
+
     public getSize() {
         return this.size;
     }
