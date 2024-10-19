@@ -14,4 +14,18 @@ describe('Stack', () => {
 
         expect(stack.getSize()).toBe(2);
     });
+
+    test('should pop elements from the stack and return it', () => {
+        stack.push(2);
+        stack.push(3);
+
+        const elPop = stack.pop();
+
+        expect(elPop).toBe(3);
+        expect(stack.getSize()).toBe(1);
+    });
+
+    test('pop elements of an empty stack should return undefined', () => {
+        expect(stack.pop()).toBe(undefined);
+    });
 });

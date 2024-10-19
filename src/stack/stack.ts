@@ -17,6 +17,18 @@ export class Stack<T> {
         this.size++;
     }
 
+    public pop(): T | undefined {
+        if (!this.tail) {
+            return undefined;
+        }
+
+        const tail = this.tail;
+        this.tail = tail.prev;
+
+        this.size--;
+        return tail?.value;
+    }
+
     public getSize(): number {
         return this.size;
     }
