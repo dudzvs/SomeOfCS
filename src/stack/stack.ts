@@ -29,6 +29,13 @@ export class Stack<T> {
         return tail?.value;
     }
 
+    public peek(): T | undefined {
+        if (!this.tail) {
+            return undefined;
+        }
+        return this.tail?.value;
+    }
+
     public getSize(): number {
         return this.size;
     }
