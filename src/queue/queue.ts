@@ -14,7 +14,7 @@ export class Queue<T> {
         this.tail = undefined;
     }
 
-    public enqueue(value: T) {
+    public enqueue(value: T): void {
         const newNode: Node<T> = { value };
 
         if (!this.tail) {
@@ -25,6 +25,18 @@ export class Queue<T> {
         }
 
         this.size++;
+    }
+
+    public dequeue(): T | undefined {
+        if (!this.head) {
+            return undefined;
+        }
+
+        const head = this.head;
+        this.head = head.next;
+
+        this.size--;
+        return head?.value;
     }
 
     public getSize() {
